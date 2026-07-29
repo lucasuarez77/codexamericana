@@ -1,39 +1,136 @@
 const files = [
     {
-        name: "File One: blah blah blah",
-        tags: ["tar baby", "scroll"],
-        link: "./fileone.html",
-        author: "Luca Suarez",
-        year: "1966",
-        location: "Mexico",
-        description: "the baby is on fire because it rolled in tar and then kept rolling and eventually fell off the tar table and into a big pit of bic lighters, which it proceeeded to grab at until one sparked and engulfed him in flames"
-    },
-    {
-        name: "File Two: bleh bleh bleh",
-        tags: ["pemex", "scroll"],
-        link: "./filetwo.html",
-        author: "Cassius Hall",
-        year: "1967",
-        location: "Boston",
-        description: "cassius spilt oil in south station. sorrryyyyy sorryyyyyy he didnt mean to he just had a big fucking bucket of crude oil and he was trying to get on the amtrak but it fell over and got EVERYWHERE"
-    },
-    {
         name: "The Tlatelolco Stele",
-        tags: ["tlatelolco", "brigada blanca", "dirty war", "olympics"],
+        tags: ["tlatelolco", "white brigade", "dirty war", "olympics"],
         link: "./tlatelolco.pdf",
         author: "Ralf Roletschek",
         year: "1966",
         location: "Plaza de las Tres Culturas, Mexico City",
-        description: "A monument erected in the Plaza de las Tres Culturas to honor those killed in the Tlatelolco Massacre. Only 20 names are engraved on its surface, despite the estimated death toll ranging somewhere between 300 and 400. The exact number of victims remains unknown. In the background, the Church of Santiago, and to the right, the Tlatelolco Archaeological Zone."
+        description: "A monument erected in the Plaza de las Tres Culturas to honor those killed in the Tlatelolco Massacre. Only 20 names are engraved on its surface, despite the estimated death toll ranging somewhere between 300 and 400. The exact number of victims remains unknown. In the background, the Church of Santiago, and to the right, the Tlatelolco Archaeological Zone.",
+        source: "",
+        image: "./placeholder.png"
     },
     {
         name: "Brigada Blanca (White Brigade) Emblem",
-        tags: ["brigada blanca", "dirty war", "olympics", "paramilitary", "death flight", "litempo"],
+        tags: ["white brigade", "dirty war", "olympics", "paramilitary", "death flight", "litempo"],
         link: "./brigadablanca.pdf",
-        author: "Gobierno de Mexico",
+        author: "Gobierno de México",
         year: "Unknown",
         location: "Unknown",
-        description: "The insignia of the White Brigade, a paramilitary unit led by Miguel Nazar Haro (LITEMPO-12) which carried out covert acts of state terrorism against left-wing militias such as the Party of the Poor (PdlP), La Iglesia del Tercer Milenio (IDTM), and La Liga Comunista 23 de Septiembre (LC23S) on behalf of the Dirección Federal de Seguridad (DFS) and the Mexican government."
+        description: "The insignia of the White Brigade, a paramilitary unit led by Miguel Nazar Haro (LITEMPO-12) which carried out covert acts of state terrorism against left-wing militias such as the Party of the Poor (PdlP), La Iglesia del Tercer Milenio (IDTM), and La Liga Comunista 23 de Septiembre (LC23S) on behalf of the Dirección Federal de Seguridad (DFS) and the Mexican government.",
+        source: "Sitios de Memoria",
+        image: "./placeholder.png"
+    },
+    {
+        name: "Dirección Federal de Seguridad (FDS) Fabric Patch",
+        tags: ["white brigade", "dirty war", "olympics", "paramilitary", "death flight"],
+        link: "./fabricpatch.pdf",
+        author: "Gobierno de México",
+        year: "Unknown",
+        location: "Unknown",
+        description: "A cloth patch belonging to an agent of the Dirección Federal de Seguridad (DFS). The perimeter text reads: “Do not fear where you go; you are meant to die where you must.”",
+        source: "Sitios de Memoria",
+        image: "./placeholder.png"
+    },
+    {
+        name: "21-438-71, L-1H-10",
+        tags: ["dirty war", "olympics", "paramilitary", "disappearances", "LC23S"],
+        link: "./21-438-71.pdf",
+        author: "Gobierno de México",
+        year: "1966",
+        location: "Unknown",
+        description: "Identifications of alleged members of the Liga Comunista 23 de Septiembre (LC23S)",
+        source: "Sitios de Memoria",
+        image: "./placeholder.png"
+    },
+    {
+        name: "Ex 21-438-71 H-2 L-1",
+        tags: ["dirty war", "olympics", "disappearances", "halcones", "DFS"],
+        link: "./ex-21-438-71.pdf",
+        author: "Gobierno de México",
+        year: "1966",
+        location: "Unknown",
+        description: "Follow-up to a statement from Gabriel Millan Arellano. Halcones were employed by the DFS.",
+        source: "Sitios de Memoria",
+        image: "./placeholder.png"
+    },
+    {
+        name: "Exp. 100-18-1-78 H-159 L-65",
+        tags: ["dirty war", "olympics", "disappearances", "halcones", "DFS"],
+        link: "./exp-100-18-1-78.pdf",
+        author: "Gobierno de México",
+        year: "1965",
+        location: "Oaxaca de Juárez, Oaxaca, Mexico",
+        description: "Kidnapping of a Medical Student from UABJO.",
+        source: "Sitios de Memoria",
+        image: "./placeholder.png"
+    },
+    {
+        name: "File of the Special Brigade of the Dirección Federal de Seguridad (DFS)",
+        tags: ["dirty war", "olympics", "disappearances", "halcones", "DFS", "LC23S", "litempo", "white bridgade"],
+        link: "./dfs.pdf",
+        author: "Gobierno de México",
+        year: "1965",
+        location: "Circular de Morelia No. 8, Colonia Roma, DF",
+        description: "A letter addressed to Miguel Nazar Haro, Deputy Director of the DFS regarding the activities of the Liga Comunista 23 de Septiembre (LC23S)",
+        source: "",
+        image: "./placeholder.png"
+    },
+    {
+        name: "1-A",
+        tags: ["corpus christi", "halcones", "paramilitary"],
+        link: "./1a.pdf",
+        author: "Unknown",
+        year: "1966-06-10",
+        location: "Mexico City",
+        description: "Enrique Bordes Mangel photographing the approaching Halcones.",
+        source: "General Directorate Fund for Political and Social Research, Box 1266B, exp. 4.",
+        image: "./placeholder.png"
+    },
+    {
+        name: "Diagram of Transferred Potential (TP)",
+        tags: ["syntergic theory", "lattices", "parapsychology"],
+        link: "./diagram-tp.pdf",
+        author: "Jacobo Grinberg-Zylberbaum",
+        year: "1965",
+        location: "Sierra Madre del Sur, Guerrero",
+        description: "Found alongside encrypted text in the notes of J. Grinberg: “i) Brain activity exists outside the skull. ii) This extra-skull activity establishes a functional connection between different brains and unites them. iii) Space is a component in our brain's perceptual construction of reality. iv) A fundamental energetic matrix exists behind every material object and physical manifestation. v) The feeling of individuality can be transcended to gain access to perception of unity.”",
+        source: "“Psychophysiological Correlates of Communication, Gravitation and Unity: The Syntergic Theory”",
+        image: "./placeholder.png"
+    },
+    {
+        name: "CIA-RDP96-00792R000700130002-5",
+        tags: ["pemex", "aztec doodlebug", "ufo", "cobalt-60"],
+        link: "./CIA-RDP96-00792R000700130002-5.pdf",
+        author: "United States Federal Government",
+        year: "1965-03-24",
+        location: "Aztec, New Mexico",
+        description: "A detailed photograph of the “Aztec Doodlebug” sold by Silas Newton and Leonard GeBauer to Petróleos Mexicanos (Pemex) in 1965.",
+        source: "Unknown",
+        image: "./placeholder.png"
+    },
+    {
+        name: "CIA-RDP79-00752A000300120171-2",
+        tags: ["aztec doodlebug", "ufo", "cobalt-60"],
+        link: "./CIA-RDP79-00752A000300120171-2.pdf",
+        author: "United States Federal Government",
+        year: "1965-03-13",
+        location: "Aztec, New Mexico",
+        description: "Necropsy performed on creature of unknown origin.",
+        source: "Unknown",
+        image: "./placeholder.png"
+    }
+    ,
+    {
+        name: "CIA-RDP96-00788R001200030002-5",
+        tags: ["ufo", "cobalt-60", "psionic devices", "white sands"],
+        link: "./CIA-RDP96-00788R001200030002-5.pdf",
+        author: "United States Federal Government",
+        year: "1966-07-16",
+        location: "White Sands Missile Range, New Mexico",
+        description: "Early psionic missile prototype constructed using traces of cobalt-60 found at an excavation site near Aztec, New Mexico.",
+        source: "Unknown",
+        image: "./placeholder.png"
     }
 ];
 
@@ -57,19 +154,22 @@ function renderFiles(fileArray) {
 
         // fill card with review info
         curFile.innerHTML =
-            `<div class="file-name">
-                <a href=${file.link}>${file.name}</a>
-            </div>
-            <div class="file-data">
-                <span class="file-author">${file.author}</span> | <span class="file-loc">${file.location}</span> | <span class="file-age">${file.year}</span>
-            </div>   
-            <div class="file-tags">
-                ${file.tags.map(tag => `
-                    <span class="file-tag">${tag}</span>
-                `).join("")}
-            </div>
-            <div class="file-desc">
-                ${file.description}
+            `<img class="search-thumb" src='${file.image}'/>
+            <div>
+                <div class="file-name">
+                    <a href='${file.link}'>${file.name}</a>
+                </div>
+                <div class="file-data">
+                    <span class="file-author">${file.author}</span> | <span class="file-loc">${file.location}</span> | <span class="file-age">${file.year}</span>
+                </div>   
+                <div class="file-tags">
+                    ${file.tags.map(tag => `
+                        <span class="file-tag">${tag}</span>
+                    `).join("")}
+                </div>
+                <div class="file-desc">
+                    ${file.description}
+                </div>
             </div>`;
 
         // append to search results

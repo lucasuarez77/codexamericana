@@ -44,9 +44,10 @@ nav {
 main {
     width: 60vw;
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 290px 1fr;
     grid-template-rows: 1fr;
     align-self: start;
+    /* border: 1px solid black; */
 }
 
 #toolbar {
@@ -81,8 +82,16 @@ main {
     padding: 20px;
 }
 
+.search-thumb {
+    width: 100%;
+    margin-right: 8px;
+}
+
 .search-file {
     margin-bottom: 25px;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 20px;
 }
 
 .search-file a,
