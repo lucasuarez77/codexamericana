@@ -113,11 +113,14 @@ function sortFiles(fileArray, type, desc) {
             }
             break;
         case "year":
-            if (desc) {
-                fileList = fileArray.sort((a, b) => b.year - a.year);
-            } else {
-                fileList = fileArray.sort((a, b) => a.year - b.year);
-            }
+            fileList = fileArray.sort((a, b) => {
+                const aIsNum = !isNaN(a.year);
+                const bIsNum = !isNaN(b.year);
+                if (aIsNum && bIsNum) return (desc ? b.year - a.year : a.year - b.year);
+                if (aIsNum && !bIsNum) return -1;
+                if (!aIsNum && bIsNum) return 1;
+                return 0;
+            });
             break;
         default:
             return;
