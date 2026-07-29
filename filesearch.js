@@ -16,6 +16,24 @@ const files = [
         year: "1967",
         location: "Boston",
         description: "cassius spilt oil in south station. sorrryyyyy sorryyyyyy he didnt mean to he just had a big fucking bucket of crude oil and he was trying to get on the amtrak but it fell over and got EVERYWHERE"
+    },
+    {
+        name: "The Tlatelolco Stele",
+        tags: ["tlatelolco", "brigada blanca", "dirty war", "olympics"],
+        link: "./tlatelolco.pdf",
+        author: "Ralf Roletschek",
+        year: "1966",
+        location: "Plaza de las Tres Culturas, Mexico City",
+        description: "A monument erected in the Plaza de las Tres Culturas to honor those killed in the Tlatelolco Massacre. Only 20 names are engraved on its surface, despite the estimated death toll ranging somewhere between 300 and 400. The exact number of victims remains unknown. In the background, the Church of Santiago, and to the right, the Tlatelolco Archaeological Zone."
+    },
+    {
+        name: "Brigada Blanca (White Brigade) Emblem",
+        tags: ["brigada blanca", "dirty war", "olympics", "paramilitary", "death flight", "litempo"],
+        link: "./brigadablanca.pdf",
+        author: "Gobierno de Mexico",
+        year: "Unknown",
+        location: "Unknown",
+        description: "The insignia of the White Brigade, a paramilitary unit led by Miguel Nazar Haro (LITEMPO-12) which carried out covert acts of state terrorism against left-wing militias such as the Party of the Poor (PdlP), La Iglesia del Tercer Milenio (IDTM), and La Liga Comunista 23 de Septiembre (LC23S) on behalf of the Dirección Federal de Seguridad (DFS) and the Mexican government."
     }
 ];
 
@@ -63,7 +81,12 @@ function renderFiles(fileArray) {
         }
         resultBox.appendChild(curFile)
     }
-    resultCount.textContent = `${fileArray.length} results`
+    if (fileArray.length == 1) {
+        resultCount.textContent = `${fileArray.length} result`
+    } else {
+        resultCount.textContent = `${fileArray.length} results`
+    }
+
 }
 
 function searchFiles(fileArray, searchTerm) {
@@ -112,8 +135,7 @@ function filterFiles(fileArray, type, term) {
         default:
             return;
     }
-    curFiles = fileList;
-    renderFiles(curFiles);
+    renderFiles(fileList);
 }
 
 searchField.addEventListener('keydown', function (event) {
