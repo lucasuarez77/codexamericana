@@ -186,6 +186,13 @@ function renderFiles(fileArray) {
                 filterFiles();
             })
         }
+        for (const loc of curFile.querySelectorAll('.file-loc')) {
+            loc.addEventListener('mouseup', function () {
+                searchField.value = '';
+                activeFilters = [{ type: "location", value: loc.innerHTML.toLowerCase() }];
+                filterFiles();
+            })
+        }
         resultBox.appendChild(curFile)
     }
     if (fileArray.length == 1) {
@@ -240,6 +247,12 @@ function sortFiles(fileArray, type, desc) {
 
 function renderSelectedFilters() {
     selectedTags.replaceChildren();
+    if (activeFilters.length > 0) {
+        selectedTags.className = "open";
+    } else {
+        selectedTags.className = "";
+    }
+
     for (const filter of activeFilters) {
         switch (filter.type) {
             case "tag":
@@ -250,8 +263,19 @@ function renderSelectedFilters() {
                     activeFilters = activeFilters.filter(f => f.type !== "tag" || f.value !== filter.value);
                     renderSelectedFilters();
                     filterFiles();
-                })
+                });
                 selectedTags.appendChild(curTag);
+                break;
+            case "location":
+                const curLoc = document.createElement('span');
+                curLoc.className = "file-loc";
+                curLoc.innerHTML = filter.value;
+                curLoc.addEventListener('mouseup', () => {
+                    activeFilters = activeFilters.filter(f => f.type !== "location" || f.value !== filter.value);
+                    renderSelectedFilters();
+                    filterFiles();
+                });
+                selectedTags.appendChild(curLoc);
                 break;
             default:
                 break;
@@ -348,6 +372,7 @@ for (const item of Object.keys(allLocs)) {
 
 locationDrop.addEventListener('change', (event) => {
     const selectedValue = event.target.value;
+    activeFilters = activeFilters.filter(f => f.type !== "location");
     if (!activeFilters.some(f => f.type === "location" && f.value === selectedValue)) {
         activeFilters.push({ type: "location", value: selectedValue });
     }
