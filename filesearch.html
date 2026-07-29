@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./filesearch.css" />
+    <title>CODEX AMERICANA</title>
+</head>
+
+<body>
+    <header style="background-color: black">
+        <h1>Codex Americana</h1>
+        <nav>
+            <a href="">about</a> | <a href="">home</a> | <a href="">codex</a> | <a href="">documents</a> | <a
+                href="">search</a> | <a href="">contact</a>
+        </nav>
+    </header>
+    <div id="searchbar">search: <input type="text" id="searchfield" /></div>
+    <main>
+        <div id="toolbar">
+            <div id="result-count"></div>
+            <hr />
+            <strong>Sort by:</strong>
+            <div id="sort-types">
+                <span id="sort-name-asc" class="sort-type">Title (A-Z)</span><br />
+                <span id="sort-name-desc" class="sort-type">Title (Z-A)</span><br />
+                <span id="sort-year-asc" class="sort-type">Date of Publication (↑)</span><br />
+                <span id="sort-year-desc" class="sort-type">Date of Publication (↓)</span>
+            </div>
+            <hr />
+            <strong>Filter by tag:</strong>
+            <div id="tag-filters"></div>
+        </div>
+        <div id="search-results"></div>
+    </main>
+    <script src="filesearch.js"></script>
+</body>
