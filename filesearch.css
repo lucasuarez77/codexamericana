@@ -113,6 +113,7 @@ main {
 
 .file-tags {
     margin: 5px 0px 10px 0px;
+    line-height: 1.6;
 }
 
 .file-tag {
