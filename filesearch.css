@@ -2,7 +2,7 @@ body {
     color: #ffffff;
     place-items: center;
     display: grid;
-    font-size: large;
+    font-size: medium;
     min-height: 100vh;
     grid-template-rows: auto auto auto 1fr;
 }

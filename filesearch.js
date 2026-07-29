@@ -214,9 +214,9 @@ function sortFiles(fileArray, type, desc) {
             break;
         case "year":
             fileList = fileArray.sort((a, b) => {
-                const aIsNum = !isNaN(a.year);
-                const bIsNum = !isNaN(b.year);
-                if (aIsNum && bIsNum) return (desc ? b.year - a.year : a.year - b.year);
+                const aIsNum = !isNaN(new Date(a.year));
+                const bIsNum = !isNaN(new Date(b.year));
+                if (aIsNum && bIsNum) return (desc ? new Date(b.year) - new Date(a.year) : new Date(a.year) - new Date(b.year));
                 if (aIsNum && !bIsNum) return -1;
                 if (!aIsNum && bIsNum) return 1;
                 return 0;
