@@ -39,7 +39,7 @@ const files = [
         author: "Gobierno de México",
         year: "1966",
         location: "Unknown",
-        description: "Identifications of alleged members of the Liga Comunista 23 de Septiembre (LC23S)",
+        description: "Identifications of alleged members of the Liga Comunista 23 de Septiembre (LC23S).",
         source: "Sitios de Memoria",
         image: "./placeholder.png"
     },
@@ -72,7 +72,7 @@ const files = [
         author: "Gobierno de México",
         year: "1965",
         location: "Circular de Morelia No. 8, Colonia Roma, DF",
-        description: "A letter addressed to Miguel Nazar Haro, Deputy Director of the DFS regarding the activities of the Liga Comunista 23 de Septiembre (LC23S)",
+        description: "A letter addressed to Miguel Nazar Haro, Deputy Director of the DFS regarding the activities of the Liga Comunista 23 de Septiembre (LC23S).",
         source: "",
         image: "./placeholder.png"
     },
@@ -82,7 +82,7 @@ const files = [
         link: "./1a.pdf",
         author: "Unknown",
         year: "1966-06-10",
-        location: "Mexico City",
+        location: "Mexico City, Mexico",
         description: "Enrique Bordes Mangel photographing the approaching Halcones.",
         source: "General Directorate Fund for Political and Social Research, Box 1266B, exp. 4.",
         image: "./placeholder.png"
@@ -235,6 +235,10 @@ function filterFiles(fileArray, type, term) {
         case "tag":
             fileList = fileArray.filter(file => file.tags.includes(term));
             break;
+        case "location":
+            console.log(term);
+            fileList = fileArray.filter(file => file.location.toLowerCase().includes(term));
+            break;
         default:
             return;
     }
@@ -285,3 +289,24 @@ for (const tag of allTags) {
     })
     tagFilters.appendChild(curTag);
 }
+
+const locationDrop = document.getElementById("loc-filter");
+
+let allLocs = [];
+for (const file of files) {
+    if (!allLocs.includes(file.location)) {
+        allLocs.push(file.location);
+    }
+}
+
+allLocs.forEach(item => {
+    const newOption = document.createElement('option');
+    newOption.value = item.toLowerCase();
+    newOption.text = item;
+    locationDrop.appendChild(newOption);
+});
+
+locationDrop.addEventListener('change', (event) => {
+    const selectedValue = event.target.value;
+    filterFiles(curFiles, "location", selectedValue);
+});
