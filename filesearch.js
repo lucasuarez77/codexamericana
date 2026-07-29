@@ -100,7 +100,7 @@ const files = [
     },
     {
         name: "CIA-RDP96-00792R000700130002-5",
-        tags: ["pemex", "aztec doodlebug", "ufo", "cobalt-60"],
+        tags: ["pemex", "aztec doodlebug", "psionic devices", "ufo", "cobalt-60"],
         link: "./CIA-RDP96-00792R000700130002-5.pdf",
         author: "United States Federal Government",
         year: "1965-03-24",
@@ -119,17 +119,60 @@ const files = [
         description: "Necropsy performed on creature of unknown origin.",
         source: "Unknown",
         image: "./placeholder.png"
-    }
-    ,
+    },
     {
         name: "CIA-RDP96-00788R001200030002-5",
-        tags: ["ufo", "cobalt-60", "psionic devices", "white sands"],
+        tags: ["ufo", "cobalt-60", "psionic devices", "athena rtv"],
         link: "./CIA-RDP96-00788R001200030002-5.pdf",
         author: "United States Federal Government",
-        year: "1966-07-16",
+        year: "1966-06-06",
         location: "White Sands Missile Range, New Mexico",
         description: "Early psionic missile prototype constructed using traces of cobalt-60 found at an excavation site near Aztec, New Mexico.",
         source: "Unknown",
+        image: "./placeholder.png"
+    },
+    {
+        name: "“Little Men Due Soon: Flying Saucer Landing Forecast”",
+        tags: ["aztec doodlebug", "psionic devices"],
+        link: "./little-men.pdf",
+        author: "David Mathias",
+        year: "1965-09-13",
+        location: "Denver Colorado",
+        description: "Author Frank Scully (right) and oil prospector Silas Newton (center) demonstrate ideas about magnetism and earth's orbit using Scully's book Behind the Flying Saucers (1950) to represent a flying saucer and a bowl held by KMYR radio salesman George Koehler (left) to represent the earth.",
+        source: "The Denver Post",
+        image: "./placeholder.png"
+    },
+    {
+        name: "Silas M. Newton Case File",
+        tags: ["aztec doodlebug", "psionic devices", "FBI"],
+        link: "./newton-case-file.pdf",
+        author: "United States Federal Government",
+        year: "1965-04-24",
+        location: "Washington, D.C.",
+        description: "FBI case file opened on Silas M. Newton after his claims of owning a gadget that could detect minerals and oil were published in the Denver Post. Two months later, he was added to the FBI’s Most Wanted list on charges of espionage, treason, supporting the production of foreign psionic weapons, and aiding suspected narco-satanist organizations.",
+        source: "Federal Bureau of Investigation",
+        image: "./placeholder.png"
+    },
+    {
+        name: "“Doodlebug Role In Alleged Swindle of Flader Probed”",
+        tags: ["aztec doodlebug", "psionic devices"],
+        link: "./doodlebug-flader-probed.pdf",
+        author: "Charles Roos",
+        year: "1965-10-17",
+        location: "Denver, Colorado",
+        description: "Headline of an article from the Denver Post reporting on the prosecution of Silas M. Newton and Leonard GeBauer for allegedly defrauding Herman A. Flader of $50,000 through his investment in GeBauer’s Colorado Geophysics & Development company, which failed to meet its projected earnings.",
+        source: "The Denver Post",
+        image: "./placeholder.png"
+    },
+    {
+        name: "“Oil Tycoons Flee to Mexico”",
+        tags: ["aztec doodlebug", "psionic devices", "FBI"],
+        link: "./oil-tycoons-mexico.pdf",
+        author: "J. P. Cahn",
+        year: "1965-10-21",
+        location: "New York City, New York",
+        description: "Images of Silas M. Newton and Leo A. GeBauer published in an article covering their flight across the border to evade U.S. authorities.",
+        source: "True, The Man's Magazine",
         image: "./placeholder.png"
     }
 ];
@@ -186,13 +229,13 @@ function renderFiles(fileArray) {
                 filterFiles();
             })
         }
-        for (const loc of curFile.querySelectorAll('.file-loc')) {
-            loc.addEventListener('mouseup', function () {
-                searchField.value = '';
-                activeFilters = [{ type: "location", value: loc.innerHTML.toLowerCase() }];
-                filterFiles();
-            })
-        }
+        // for (const loc of curFile.querySelectorAll('.file-loc')) {
+        //     loc.addEventListener('mouseup', function () {
+        //         searchField.value = '';
+        //         activeFilters = [{ type: "location", value: loc.innerHTML.toLowerCase() }];
+        //         filterFiles();
+        //     })
+        // }
         resultBox.appendChild(curFile)
     }
     if (fileArray.length == 1) {
@@ -266,17 +309,17 @@ function renderSelectedFilters() {
                 });
                 selectedTags.appendChild(curTag);
                 break;
-            case "location":
-                const curLoc = document.createElement('span');
-                curLoc.className = "file-loc";
-                curLoc.innerHTML = filter.value;
-                curLoc.addEventListener('mouseup', () => {
-                    activeFilters = activeFilters.filter(f => f.type !== "location" || f.value !== filter.value);
-                    renderSelectedFilters();
-                    filterFiles();
-                });
-                selectedTags.appendChild(curLoc);
-                break;
+            // case "location":
+            //     const curLoc = document.createElement('span');
+            //     curLoc.className = "file-loc";
+            //     curLoc.innerHTML = filter.value;
+            //     curLoc.addEventListener('mouseup', () => {
+            //         activeFilters = activeFilters.filter(f => f.type !== "location" || f.value !== filter.value);
+            //         renderSelectedFilters();
+            //         filterFiles();
+            //     });
+            //     selectedTags.appendChild(curLoc);
+            //     break;
             default:
                 break;
         }
