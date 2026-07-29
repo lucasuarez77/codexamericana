@@ -23,7 +23,7 @@ header {
     background-image: url("paper.avif");
     text-align: center;
     font-family: "American Typewriter";
-    width: 60vw;
+    width: 100%;
 }
 
 header h1 {
@@ -35,7 +35,7 @@ header h1 {
 
 #main-column {
     background-color: white;
-    width: 60vw;
+    width: 65vw;
     /* border-radius: 4px; */
     overflow: hidden;
     /* border: 5px ridge black;
@@ -54,6 +54,10 @@ nav {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 15px;
+}
+
+#selected-tags {
+    /* background-color: red; */
 }
 
 main {

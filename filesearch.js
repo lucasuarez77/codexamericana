@@ -145,6 +145,12 @@ const sortNameDesc = document.getElementById("sort-name-desc");
 const sortYearAsc = document.getElementById("sort-year-asc");
 const sortYearDesc = document.getElementById("sort-year-desc");
 
+const locationDrop = document.getElementById("loc-filter");
+
+const selectedTags = document.getElementById("selected-tags");
+
+let activeFilters = [];
+
 function renderFiles(fileArray) {
     resultBox.replaceChildren();
     for (const file of fileArray) {
@@ -174,9 +180,10 @@ function renderFiles(fileArray) {
 
         // append to search results
         for (const tag of curFile.querySelectorAll('.file-tag')) {
-            tag.addEventListener('mouseup', function (event) {
+            tag.addEventListener('mouseup', function () {
                 searchField.value = '';
-                filterFiles(files, "tag", tag.innerHTML);
+                activeFilters = [["tag", tag.innerHTML]];
+                filterFiles();
             })
         }
         resultBox.appendChild(curFile)
@@ -186,7 +193,6 @@ function renderFiles(fileArray) {
     } else {
         resultCount.textContent = `${fileArray.length} results`
     }
-
 }
 
 function searchFiles(fileArray, searchTerm) {
@@ -199,6 +205,9 @@ function searchFiles(fileArray, searchTerm) {
         file.year.includes(term) ||
         file.location.toLowerCase().includes(term.toLowerCase())
     ));
+    locationDrop.selectedIndex = 0;
+    activeFilters = [];
+    renderSelectedFilters();
     return curFiles;
 }
 
@@ -229,20 +238,47 @@ function sortFiles(fileArray, type, desc) {
     renderFiles(curFiles);
 }
 
-function filterFiles(fileArray, type, term) {
-    let fileList;
-    switch (type) {
-        case "tag":
-            fileList = fileArray.filter(file => file.tags.includes(term));
-            break;
-        case "location":
-            console.log(term);
-            fileList = fileArray.filter(file => file.location.toLowerCase().includes(term));
-            break;
-        default:
-            return;
+function renderSelectedFilters() {
+    selectedTags.replaceChildren();
+    for (const filter of activeFilters) {
+        switch (filter[0]) {
+            case "tag":
+                const curTag = document.createElement('span');
+                curTag.className = "file-tag";
+                curTag.innerHTML = filter[1];
+                curTag.addEventListener('mouseup', () => {
+                    activeFilters = activeFilters.filter(f => f !== filter);
+                    renderSelectedFilters();
+                    filterFiles();
+                })
+                selectedTags.appendChild(curTag);
+                break;
+            default:
+                break;
+        }
     }
-    renderFiles(fileList);
+}
+
+function filterFiles() {
+    let fileList = files;
+    console.log(activeFilters);
+
+    for (const filter of activeFilters) {
+        switch (filter[0]) {
+            case "tag":
+                fileList = fileList.filter(file => file.tags.includes(filter[1]));
+                break;
+            case "location":
+                fileList = fileList.filter(file => file.location.toLowerCase().includes(filter[1]));
+                break;
+            default:
+                break;
+        }
+    }
+
+    curFiles = fileList;
+    renderFiles(curFiles);
+    renderSelectedFilters();
 }
 
 searchField.addEventListener('keydown', function (event) {
@@ -260,7 +296,6 @@ sortNameDesc.addEventListener('click', function () {
     sortFiles(curFiles, "name", true);
 })
 sortYearAsc.addEventListener('click', function () {
-    console.log("sort year asc");
     sortFiles(curFiles, "year", false);
 })
 sortYearDesc.addEventListener('click', function () {
@@ -285,28 +320,37 @@ for (const tag of allTags) {
     curTag.className = "file-tag";
     curTag.innerHTML = tag;
     curTag.addEventListener('mouseup', function () {
-        filterFiles(curFiles, "tag", tag)
+        if (!activeFilters.includes(["tag", tag])) {
+            activeFilters.push(["tag", tag]);
+        }
+        filterFiles();
     })
     tagFilters.appendChild(curTag);
 }
 
-const locationDrop = document.getElementById("loc-filter");
-
-let allLocs = [];
+const allLocs = {};
 for (const file of files) {
-    if (!allLocs.includes(file.location)) {
-        allLocs.push(file.location);
+    if (file.location in allLocs) {
+        allLocs[file.location] = allLocs[file.location] + 1;
+
+    } else {
+        allLocs[file.location] = 1;
     }
 }
 
-allLocs.forEach(item => {
-    const newOption = document.createElement('option');
-    newOption.value = item.toLowerCase();
-    newOption.text = item;
-    locationDrop.appendChild(newOption);
-});
+for (const item of Object.keys(allLocs)) {
+    if (allLocs[item] > 1) {
+        const newOption = document.createElement('option');
+        newOption.value = item.toLowerCase();
+        newOption.text = item;
+        locationDrop.appendChild(newOption);
+    }
+};
 
 locationDrop.addEventListener('change', (event) => {
     const selectedValue = event.target.value;
-    filterFiles(curFiles, "location", selectedValue);
+    if (!activeFilters.includes(["location", selectedValue])) {
+        activeFilters.push(["location", selectedValue]);
+    }
+    filterFiles();
 });
