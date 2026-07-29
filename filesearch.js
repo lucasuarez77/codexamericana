@@ -67,7 +67,7 @@ const files = [
     },
     {
         name: "File of the Special Brigade of the Dirección Federal de Seguridad (DFS)",
-        tags: ["dirty war", "olympics", "disappearances", "halcones", "DFS", "LC23S", "litempo", "white bridgade"],
+        tags: ["dirty war", "olympics", "disappearances", "halcones", "DFS", "LC23S", "litempo", "white brigade"],
         link: "./dfs.pdf",
         author: "Gobierno de México",
         year: "1965",
@@ -182,7 +182,7 @@ function renderFiles(fileArray) {
         for (const tag of curFile.querySelectorAll('.file-tag')) {
             tag.addEventListener('mouseup', function () {
                 searchField.value = '';
-                activeFilters = [["tag", tag.innerHTML]];
+                activeFilters = [{ type: "tag", value: tag.innerHTML }];
                 filterFiles();
             })
         }
@@ -241,13 +241,13 @@ function sortFiles(fileArray, type, desc) {
 function renderSelectedFilters() {
     selectedTags.replaceChildren();
     for (const filter of activeFilters) {
-        switch (filter[0]) {
+        switch (filter.type) {
             case "tag":
                 const curTag = document.createElement('span');
                 curTag.className = "file-tag";
-                curTag.innerHTML = filter[1];
+                curTag.innerHTML = filter.value;
                 curTag.addEventListener('mouseup', () => {
-                    activeFilters = activeFilters.filter(f => f !== filter);
+                    activeFilters = activeFilters.filter(f => f.type !== "tag" || f.value !== filter.value);
                     renderSelectedFilters();
                     filterFiles();
                 })
@@ -261,15 +261,14 @@ function renderSelectedFilters() {
 
 function filterFiles() {
     let fileList = files;
-    console.log(activeFilters);
 
     for (const filter of activeFilters) {
-        switch (filter[0]) {
+        switch (filter.type) {
             case "tag":
-                fileList = fileList.filter(file => file.tags.includes(filter[1]));
+                fileList = fileList.filter(file => file.tags.includes(filter.value));
                 break;
             case "location":
-                fileList = fileList.filter(file => file.location.toLowerCase().includes(filter[1]));
+                fileList = fileList.filter(file => file.location.toLowerCase().includes(filter.value));
                 break;
             default:
                 break;
@@ -320,8 +319,8 @@ for (const tag of allTags) {
     curTag.className = "file-tag";
     curTag.innerHTML = tag;
     curTag.addEventListener('mouseup', function () {
-        if (!activeFilters.includes(["tag", tag])) {
-            activeFilters.push(["tag", tag]);
+        if (!activeFilters.some(f => f.type === "tag" && f.value === tag)) {
+            activeFilters.push({ type: "tag", value: tag });
         }
         filterFiles();
     })
@@ -349,8 +348,8 @@ for (const item of Object.keys(allLocs)) {
 
 locationDrop.addEventListener('change', (event) => {
     const selectedValue = event.target.value;
-    if (!activeFilters.includes(["location", selectedValue])) {
-        activeFilters.push(["location", selectedValue]);
+    if (!activeFilters.some(f => f.type === "location" && f.value === selectedValue)) {
+        activeFilters.push({ type: "location", value: selectedValue });
     }
     filterFiles();
 });
