@@ -174,7 +174,51 @@ const files = [
         description: "Images of Silas M. Newton and Leo A. GeBauer published in an article covering their flight across the border to evade U.S. authorities.",
         source: "True, The Man's Magazine",
         image: "./placeholder.png"
-    }
+    },
+    {
+        name: "“Jumbo”",
+        tags: ["trinity", "nuclear weapons", "radiation"],
+        link: "./jumbo.pdf",
+        author: "Berlyn Brixner",
+        year: "1945-07-15",
+        location: "Socorro, New Mexico",
+        description: "Photograph of “Jumbo” taken 35 miles southwest of Socorro, New Mexico (now part of White Sands Missile Range) during its transport from Ohio to the Trinity test site.",
+        source: "Los Alamos National Laboratory",
+        image: "./placeholder.png"
+    },
+    {
+        name: "Map of Reported UFO Incidents, New Mexico, 1964-1966",
+        tags: ["ufo", "aztec doodlebug", "lonnie zamora", "hobbs burn", "silent zone"],
+        link: "./ufos-nm.pdf",
+        author: "Cartography Division & OBI",
+        year: "1966-09-03",
+        location: "Washington, D.C.",
+        description: "Annotated map of New Mexico highlighting geographical connections between reported anomalous phenomena and key military bases.",
+        source: "U.S. Air Force, Project Blue Book",
+        image: "./placeholder.png"
+    },
+    {
+        name: "Operation Sand Patch",
+        tags: ["silent zone", "radiation"],
+        links: "./operation-sandpatch.pdf",
+        author: "Guillermo Asunsolo",
+        year: "1966",
+        location: "Mapimí, Durango",
+        description: "Photograph of U.S. military railcars in a Juarez railyard, published in a Mexican newspaper with the following caption: “Seventeen units including tank cars, platforms, vans and Pullman cars, make up the train that transports personnel and equipment of the U.S. Aeronautical and Space Administration, which last night at 11:35 p.m., guarded by Mexican federal police agents, entered national territory. Heavy machinery, trucks, electric power generating plants, refrigeration units and sleeping cars with their respective Red Cross symbols. All vehicles and equipment are carefully covered with serial numbers and identification. All are apparently property of the neighboring country’s army. The final destination is the radiation zone near Ceballos, Durango.”",
+        source: "El Heraldo",
+        image: "./placeholder.png"
+    },
+    {
+        name: "Operation Teapot",
+        tags: ["nuclear weapons", "radiation"],
+        link: "./operation-teapot.pdf",
+        author: "International News Photo",
+        year: "1955-03-29",
+        location: "White Sands Missile Range, New Mexico",
+        description: "Technical photographers recording the blast from an atomic bomb test at the White Sands Missile Range (WSMR).",
+        source: "National Nuclear Security Administration",
+        image: "./placeholder.png"
+    },
 ];
 
 let curFiles = files;
