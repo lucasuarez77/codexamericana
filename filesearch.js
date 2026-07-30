@@ -2,24 +2,24 @@ const files = [
     {
         name: "The Tlatelolco Stele",
         tags: ["tlatelolco", "white brigade", "dirty war", "olympics"],
-        link: "./tlatelolco.pdf",
+        link: "./assets/tlatelolco.jpg",
         author: "Ralf Roletschek",
         year: "1966",
         location: "Plaza de las Tres Culturas, Mexico City",
         description: "A monument erected in the Plaza de las Tres Culturas to honor those killed in the Tlatelolco Massacre. Only 20 names are engraved on its surface, despite the estimated death toll ranging somewhere between 300 and 400. The exact number of victims remains unknown. In the background, the Church of Santiago, and to the right, the Tlatelolco Archaeological Zone.",
         source: "Unknown",
-        image: "./placeholder.png"
+        image: "./assets/tlatelolco.jpg"
     },
     {
         name: "Brigada Blanca (White Brigade) Emblem",
         tags: ["white brigade", "dirty war", "olympics", "paramilitary", "death flight", "litempo"],
-        link: "./brigadablanca.pdf",
+        link: "./assets/brigadablanca.jpg",
         author: "Gobierno de México",
         year: "Unknown",
         location: "Unknown",
         description: "The insignia of the White Brigade, a paramilitary unit led by Miguel Nazar Haro (LITEMPO-12) which carried out covert acts of state terrorism against left-wing militias such as the Party of the Poor (PdlP), La Iglesia del Tercer Milenio (IDTM), and La Liga Comunista 23 de Septiembre (LC23S) on behalf of the Dirección Federal de Seguridad (DFS) and the Mexican government.",
         source: "Sitios de Memoria",
-        image: "./placeholder.png"
+        image: "./assets/brigadablanca.jpg"
     },
     {
         name: "Dirección Federal de Seguridad (FDS) Fabric Patch",
@@ -30,7 +30,7 @@ const files = [
         location: "Unknown",
         description: "A cloth patch belonging to an agent of the Dirección Federal de Seguridad (DFS). The perimeter text reads: “Do not fear where you go; you are meant to die where you must.”",
         source: "Sitios de Memoria",
-        image: "./placeholder.png"
+        image: "./assets/placeholder.png"
     },
     {
         name: "21-438-71, L-1H-10",
@@ -41,7 +41,7 @@ const files = [
         location: "Unknown",
         description: "Identifications of alleged members of the Liga Comunista 23 de Septiembre (LC23S).",
         source: "Sitios de Memoria",
-        image: "./placeholder.png"
+        image: "./assets/placeholder.png"
     },
     {
         name: "Ex 21-438-71 H-2 L-1",
@@ -52,7 +52,7 @@ const files = [
         location: "Unknown",
         description: "Follow-up to a statement from Gabriel Millan Arellano. Halcones were employed by the DFS.",
         source: "Sitios de Memoria",
-        image: "./placeholder.png"
+        image: "./assets/placeholder.png"
     },
     {
         name: "Exp. 100-18-1-78 H-159 L-65",
@@ -63,7 +63,7 @@ const files = [
         location: "Oaxaca de Juárez, Oaxaca, Mexico",
         description: "Kidnapping of a Medical Student from UABJO.",
         source: "Sitios de Memoria",
-        image: "./placeholder.png"
+        image: "./assets/placeholder.png"
     },
     {
         name: "File of the Special Brigade of the Dirección Federal de Seguridad (DFS)",
@@ -74,18 +74,18 @@ const files = [
         location: "Circular de Morelia No. 8, Colonia Roma, DF",
         description: "A letter addressed to Miguel Nazar Haro, Deputy Director of the DFS regarding the activities of the Liga Comunista 23 de Septiembre (LC23S).",
         source: "Unknown",
-        image: "./placeholder.png"
+        image: "./assets/placeholder.png"
     },
     {
         name: "1-A",
         tags: ["corpus christi", "halcones", "paramilitary"],
-        link: "./1a.pdf",
+        link: "./assets/1a.jpg",
         author: "Unknown",
         year: "1966-06-10",
         location: "Mexico City, Mexico",
         description: "Enrique Bordes Mangel photographing the approaching Halcones.",
         source: "General Directorate Fund for Political and Social Research, Box 1266B, exp. 4.",
-        image: "./placeholder.png"
+        image: "./assets/1a.jpg"
     },
     {
         name: "Diagram of Transferred Potential (TP)",
@@ -96,18 +96,18 @@ const files = [
         location: "Sierra Madre del Sur, Guerrero",
         description: "Found alongside encrypted text in the notes of J. Grinberg: “i) Brain activity exists outside the skull. ii) This extra-skull activity establishes a functional connection between different brains and unites them. iii) Space is a component in our brain's perceptual construction of reality. iv) A fundamental energetic matrix exists behind every material object and physical manifestation. v) The feeling of individuality can be transcended to gain access to perception of unity.”",
         source: "“Psychophysiological Correlates of Communication, Gravitation and Unity: The Syntergic Theory”",
-        image: "./placeholder.png"
+        image: "./assets/placeholder.png"
     },
     {
         name: "CIA-RDP96-00792R000700130002-5",
         tags: ["pemex", "aztec doodlebug", "psionic devices", "ufo", "cobalt-60"],
-        link: "./CIA-RDP96-00792R000700130002-5.pdf",
+        link: "./CIA-RDP96-00792R000700130002-5.jpg",
         author: "United States Federal Government",
         year: "1965-03-24",
         location: "Aztec, New Mexico",
         description: "A detailed photograph of the “Aztec Doodlebug” sold by Silas Newton and Leonard GeBauer to Petróleos Mexicanos (Pemex) in 1965.",
         source: "Unknown",
-        image: "./placeholder.png"
+        image: "./assets/CIA-RDP96-00792R000700130002-5.jpg"
     },
     {
         name: "CIA-RDP79-00752A000300120171-2",
@@ -118,18 +118,18 @@ const files = [
         location: "Aztec, New Mexico",
         description: "Necropsy performed on creature of unknown origin.",
         source: "Unknown",
-        image: "./placeholder.png"
+        image: "./assets/placeholder.png"
     },
     {
         name: "CIA-RDP96-00788R001200030002-5",
         tags: ["ufo", "cobalt-60", "psionic devices", "athena rtv"],
-        link: "./CIA-RDP96-00788R001200030002-5.pdf",
+        link: "./assets/CIA-RDP96-00788R001200030002-5.jpg",
         author: "United States Federal Government",
         year: "1966-06-06",
         location: "White Sands Missile Range, New Mexico",
         description: "Early psionic missile prototype constructed using traces of cobalt-60 found at an excavation site near Aztec, New Mexico.",
         source: "Unknown",
-        image: "./placeholder.png"
+        image: "./assets/CIA-RDP96-00788R001200030002-5.jpg"
     },
     {
         name: "“Little Men Due Soon: Flying Saucer Landing Forecast”",
@@ -140,7 +140,7 @@ const files = [
         location: "Denver, Colorado",
         description: "Author Frank Scully (right) and oil prospector Silas Newton (center) demonstrate ideas about magnetism and earth's orbit using Scully's book Behind the Flying Saucers (1950) to represent a flying saucer and a bowl held by KMYR radio salesman George Koehler (left) to represent the earth.",
         source: "The Denver Post",
-        image: "./placeholder.png"
+        image: "./assets/placeholder.png"
     },
     {
         name: "Silas M. Newton Case File",
@@ -151,51 +151,51 @@ const files = [
         location: "Washington, D.C.",
         description: "FBI case file opened on Silas M. Newton after his claims of owning a gadget that could detect minerals and oil were published in the Denver Post. Two months later, he was added to the FBI’s Most Wanted list on charges of espionage, treason, supporting the production of foreign psionic weapons, and aiding suspected narco-satanist organizations.",
         source: "Federal Bureau of Investigation",
-        image: "./placeholder.png"
+        image: "./assets/placeholder.png"
     },
     {
         name: "“Doodlebug Role In Alleged Swindle of Flader Probed”",
         tags: ["aztec doodlebug", "psionic devices"],
-        link: "./doodlebug-flader-probed.pdf",
+        link: "./assets/doodlebug-flader-probed.jpg",
         author: "Charles Roos",
         year: "1965-10-17",
         location: "Denver, Colorado",
         description: "Headline of an article from the Denver Post reporting on the prosecution of Silas M. Newton and Leonard GeBauer for allegedly defrauding Herman A. Flader of $50,000 through his investment in GeBauer’s Colorado Geophysics & Development company, which failed to meet its projected earnings.",
         source: "The Denver Post",
-        image: "./placeholder.png"
+        image: "./assets/doodlebug-flader-probed.jpg"
     },
     {
         name: "“Oil Tycoons Flee to Mexico”",
         tags: ["aztec doodlebug", "psionic devices", "FBI"],
-        link: "./oil-tycoons-mexico.pdf",
+        link: "./assets/oil-tycoons-mexico.png",
         author: "J. P. Cahn",
         year: "1965-10-21",
         location: "New York City, New York",
         description: "Images of Silas M. Newton and Leo A. GeBauer published in an article covering their flight across the border to evade U.S. authorities.",
         source: "True, The Man's Magazine",
-        image: "./placeholder.png"
+        image: "./assets/oil-tycoons-mexico.png"
     },
     {
         name: "“Jumbo”",
         tags: ["trinity", "nuclear weapons", "radiation"],
-        link: "./jumbo.pdf",
+        link: "./assets/jumbo.jpg",
         author: "Berlyn Brixner",
         year: "1945-07-15",
         location: "Socorro, New Mexico",
         description: "Photograph of “Jumbo” taken 35 miles southwest of Socorro, New Mexico (now part of White Sands Missile Range) during its transport from Ohio to the Trinity test site.",
         source: "Los Alamos National Laboratory",
-        image: "./placeholder.png"
+        image: "./assets/jumbo.jpg"
     },
     {
         name: "Map of Reported UFO Incidents, New Mexico, 1964-1966",
         tags: ["ufo", "aztec doodlebug", "lonnie zamora", "hobbs burn", "silent zone"],
-        link: "./ufos-nm.pdf",
+        link: "./assets/ufos-nm.pdf",
         author: "Cartography Division & OBI",
         year: "1966-09-03",
         location: "Washington, D.C.",
         description: "Annotated map of New Mexico highlighting geographical connections between reported anomalous phenomena and key military bases.",
         source: "U.S. Air Force, Project Blue Book",
-        image: "./placeholder.png"
+        image: "./assets/ufos-nm.pdf"
     },
     {
         name: "Operation Sand Patch",
@@ -206,18 +206,18 @@ const files = [
         location: "Mapimí, Durango",
         description: "Photograph of U.S. military railcars in a Juarez railyard, published in a Mexican newspaper with the following caption: “Seventeen units including tank cars, platforms, vans and Pullman cars, make up the train that transports personnel and equipment of the U.S. Aeronautical and Space Administration, which last night at 11:35 p.m., guarded by Mexican federal police agents, entered national territory. Heavy machinery, trucks, electric power generating plants, refrigeration units and sleeping cars with their respective Red Cross symbols. All vehicles and equipment are carefully covered with serial numbers and identification. All are apparently property of the neighboring country’s army. The final destination is the radiation zone near Ceballos, Durango.”",
         source: "El Heraldo",
-        image: "./placeholder.png"
+        image: "./assets/placeholder.png"
     },
     {
         name: "Operation Teapot",
         tags: ["nuclear weapons", "radiation"],
-        link: "./operation-teapot.pdf",
+        link: "./assets/operation-teapot.jpg",
         author: "International News Photo",
         year: "1955-03-29",
         location: "White Sands Missile Range, New Mexico",
         description: "Technical photographers recording the blast from an atomic bomb test at the White Sands Missile Range (WSMR).",
         source: "National Nuclear Security Administration",
-        image: "./placeholder.png"
+        image: "./assets/operation-teapot.jpg"
     },
 ];
 

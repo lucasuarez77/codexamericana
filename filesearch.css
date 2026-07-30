@@ -90,7 +90,6 @@ main {
 }
 
 .sort-type.active {
-    color: gold;
     font-weight: bold;
 }
 
