@@ -134,13 +134,13 @@ const files = [
     {
         name: "“Little Men Due Soon: Flying Saucer Landing Forecast”",
         tags: ["aztec doodlebug", "psionic devices"],
-        link: "./assets/little-men.png",
+        link: "./assets/little-men-landing.png",
         author: "David Mathias",
         year: "1965-09-13",
         location: "Denver, Colorado",
         description: "Author Frank Scully (right) and oil prospector Silas Newton (center) demonstrate ideas about magnetism and earth's orbit using Scully's book Behind the Flying Saucers (1950) to represent a flying saucer and a bowl held by KMYR radio salesman George Koehler (left) to represent the earth.",
         source: "The Denver Post",
-        image: "./assets/little-men.png"
+        image: "./assets/little-men-landing.png"
     },
     {
         name: "Silas M. Newton Case File",
