@@ -24,16 +24,16 @@ const files = [
         image: "./assets/brigadablanca.jpg"
     },
     {
-        name: "Dirección Federal de Seguridad (FDS) Fabric Patch",
+        name: "Dirección Federal de Seguridad (DFS) Fabric Patch",
         tags: ["white brigade", "dirty war", "olympics", "paramilitary", "death flight"],
-        link: "./assets/fabricpatch.pdf",
+        link: "./assets/fabricpatch.jpg",
         author: "Gobierno de Mexico",
         year: "Unknown",
         location: "Unknown",
         locationTag: "Unknown",
         description: "A cloth patch belonging to an agent of the Dirección Federal de Seguridad (DFS). The perimeter text reads: “Do not fear where you go; you are meant to die where you must.”",
         source: "Sitios de Memoria",
-        image: "./assets/placeholder.png"
+        image: "./assets/fabricpatch.jpg"
     },
     {
         name: "21-438-71, L-1H-10",
