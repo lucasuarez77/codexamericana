@@ -112,7 +112,7 @@ const files = [
     {
         name: "CIA-RDP79-00752A000300120171-2",
         tags: ["aztec doodlebug", "ufo", "cobalt-60"],
-        link: "./assets/CIA-RDP79-00752A000300120171-2.pdf",
+        link: "./assets/CIA-RDP79-00752A000300120171-2.jpg",
         author: "United States Federal Government",
         year: "1965-03-13",
         location: "Aztec, New Mexico",
@@ -134,13 +134,13 @@ const files = [
     {
         name: "“Little Men Due Soon: Flying Saucer Landing Forecast”",
         tags: ["aztec doodlebug", "psionic devices"],
-        link: "./assets/little-men.pdf",
+        link: "./assets/little-men.png",
         author: "David Mathias",
         year: "1965-09-13",
         location: "Denver, Colorado",
         description: "Author Frank Scully (right) and oil prospector Silas Newton (center) demonstrate ideas about magnetism and earth's orbit using Scully's book Behind the Flying Saucers (1950) to represent a flying saucer and a bowl held by KMYR radio salesman George Koehler (left) to represent the earth.",
         source: "The Denver Post",
-        image: "./assets/placeholder.png"
+        image: "./assets/little-men.png"
     },
     {
         name: "Silas M. Newton Case File",
@@ -200,13 +200,13 @@ const files = [
     {
         name: "Operation Sand Patch",
         tags: ["silent zone", "radiation"],
-        links: "./assets/operation-sandpatch.pdf",
+        links: "./assets/operation-sandpatch.png",
         author: "Guillermo Asunsolo",
         year: "1966",
         location: "Mapimí, Durango",
         description: "Photograph of U.S. military railcars in a Juarez railyard, published in a Mexican newspaper with the following caption: “Seventeen units including tank cars, platforms, vans and Pullman cars, make up the train that transports personnel and equipment of the U.S. Aeronautical and Space Administration, which last night at 11:35 p.m., guarded by Mexican federal police agents, entered national territory. Heavy machinery, trucks, electric power generating plants, refrigeration units and sleeping cars with their respective Red Cross symbols. All vehicles and equipment are carefully covered with serial numbers and identification. All are apparently property of the neighboring country’s army. The final destination is the radiation zone near Ceballos, Durango.”",
         source: "El Heraldo",
-        image: "./assets/placeholder.png"
+        image: "./assets/operation-sandpatch.png"
     },
     {
         name: "Operation Teapot",
