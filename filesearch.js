@@ -137,7 +137,7 @@ const files = [
         link: "./little-men.pdf",
         author: "David Mathias",
         year: "1965-09-13",
-        location: "Denver Colorado",
+        location: "Denver, Colorado",
         description: "Author Frank Scully (right) and oil prospector Silas Newton (center) demonstrate ideas about magnetism and earth's orbit using Scully's book Behind the Flying Saucers (1950) to represent a flying saucer and a bowl held by KMYR radio salesman George Koehler (left) to represent the earth.",
         source: "The Denver Post",
         image: "./placeholder.png"
@@ -405,12 +405,12 @@ for (const file of files) {
 }
 
 for (const item of Object.keys(allLocs)) {
-    if (allLocs[item] > 1) {
-        const newOption = document.createElement('option');
-        newOption.value = item.toLowerCase();
-        newOption.text = item;
-        locationDrop.appendChild(newOption);
-    }
+    // if (allLocs[item] > 1) {
+    const newOption = document.createElement('option');
+    newOption.value = item.toLowerCase();
+    newOption.text = item;
+    locationDrop.appendChild(newOption);
+    // }
 };
 
 locationDrop.addEventListener('change', (event) => {
