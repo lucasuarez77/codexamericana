@@ -14,7 +14,7 @@ const files = [
         name: "Brigada Blanca (White Brigade) Emblem",
         tags: ["white brigade", "dirty war", "olympics", "paramilitary", "death flight", "litempo"],
         link: "./assets/brigadablanca.jpg",
-        author: "Gobierno de México",
+        author: "Gobierno de Mexico",
         year: "Unknown",
         location: "Unknown",
         description: "The insignia of the White Brigade, a paramilitary unit led by Miguel Nazar Haro (LITEMPO-12) which carried out covert acts of state terrorism against left-wing militias such as the Party of the Poor (PdlP), La Iglesia del Tercer Milenio (IDTM), and La Liga Comunista 23 de Septiembre (LC23S) on behalf of the Dirección Federal de Seguridad (DFS) and the Mexican government.",
@@ -25,7 +25,7 @@ const files = [
         name: "Dirección Federal de Seguridad (FDS) Fabric Patch",
         tags: ["white brigade", "dirty war", "olympics", "paramilitary", "death flight"],
         link: "./assets/fabricpatch.pdf",
-        author: "Gobierno de México",
+        author: "Gobierno de Mexico",
         year: "Unknown",
         location: "Unknown",
         description: "A cloth patch belonging to an agent of the Dirección Federal de Seguridad (DFS). The perimeter text reads: “Do not fear where you go; you are meant to die where you must.”",
@@ -36,7 +36,7 @@ const files = [
         name: "21-438-71, L-1H-10",
         tags: ["dirty war", "olympics", "paramilitary", "disappearances", "LC23S"],
         link: "./assets/21-438-71.pdf",
-        author: "Gobierno de México",
+        author: "Gobierno de Mexico",
         year: "1966",
         location: "Unknown",
         description: "Identifications of alleged members of the Liga Comunista 23 de Septiembre (LC23S).",
@@ -47,7 +47,7 @@ const files = [
         name: "Ex 21-438-71 H-2 L-1",
         tags: ["dirty war", "olympics", "disappearances", "halcones", "DFS"],
         link: "./assets/ex-21-438-71.pdf",
-        author: "Gobierno de México",
+        author: "Gobierno de Mexico",
         year: "1966",
         location: "Unknown",
         description: "Follow-up to a statement from Gabriel Millan Arellano. Halcones were employed by the DFS.",
@@ -58,7 +58,7 @@ const files = [
         name: "Exp. 100-18-1-78 H-159 L-65",
         tags: ["dirty war", "olympics", "disappearances", "halcones", "DFS"],
         link: "./assets/exp-100-18-1-78.pdf",
-        author: "Gobierno de México",
+        author: "Gobierno de Mexico",
         year: "1965",
         location: "Oaxaca de Juárez, Oaxaca, Mexico",
         description: "Kidnapping of a Medical Student from UABJO.",
@@ -69,7 +69,7 @@ const files = [
         name: "File of the Special Brigade of the Dirección Federal de Seguridad (DFS)",
         tags: ["dirty war", "olympics", "disappearances", "halcones", "DFS", "LC23S", "litempo", "white brigade"],
         link: "./assets/dfs.pdf",
-        author: "Gobierno de México",
+        author: "Gobierno de Mexico",
         year: "1965",
         location: "Circular de Morelia No. 8, Colonia Roma, DF",
         description: "A letter addressed to Miguel Nazar Haro, Deputy Director of the DFS regarding the activities of the Liga Comunista 23 de Septiembre (LC23S).",
@@ -241,6 +241,27 @@ let activeFilters = [];
 
 let currentSort = "name-asc";
 
+function normalizeText(text) {
+    return text
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+}
+
+for (const file of files) {
+    file.searchText = normalizeText(
+        [
+            file.name,
+            file.tags.join(","),
+            file.author,
+            file.description,
+            file.year,
+            file.location,
+            file.source
+        ].join(" ")
+    );
+}
+
 function updateSortButtons() {
     sortButtons.forEach(button => button.classList.remove("active"));
 
@@ -293,7 +314,7 @@ function renderFiles(fileArray) {
                 </div>   
                 <div class="file-tags">
                     ${file.tags.map(tag => `
-                        <span class="file-tag">${tag}</span>
+                        <span class="file-tag" title="View all ${tag} files">${tag}</span>
                     `).join("")}
                 </div>
                 <div class="file-desc">
@@ -375,15 +396,21 @@ function updateResults() {
     if (searchTerm !== "") {
         const searchTerms = searchTerm.split(/\s+/);
 
+        // fileList = fileList.filter(file =>
+        //     searchTerms.every(term =>
+        //         file.name.toLowerCase().includes(term.toLowerCase()) ||
+        //         file.tags.join(",").toLowerCase().includes(term.toLowerCase()) ||
+        //         file.author.toLowerCase().includes(term.toLowerCase()) ||
+        //         file.description.toLowerCase().includes(term.toLowerCase()) ||
+        //         file.year.includes(term) ||
+        //         file.location.toLowerCase().includes(term.toLowerCase()) ||
+        //         file.source.toLowerCase().includes(term.toLowerCase())
+        //     )
+        // );
+
         fileList = fileList.filter(file =>
             searchTerms.every(term =>
-                file.name.toLowerCase().includes(term.toLowerCase()) ||
-                file.tags.join(",").toLowerCase().includes(term.toLowerCase()) ||
-                file.author.toLowerCase().includes(term.toLowerCase()) ||
-                file.description.toLowerCase().includes(term.toLowerCase()) ||
-                file.year.includes(term) ||
-                file.location.toLowerCase().includes(term.toLowerCase()) ||
-                file.source.toLowerCase().includes(term.toLowerCase())
+                file.searchText.includes(normalizeText(term))
             )
         );
     }
@@ -481,6 +508,7 @@ searchField.addEventListener('keydown', function (event) {
         event.preventDefault();
         // searchFiles(files, searchField.value);
         // renderFiles(curFiles);
+        activeFilters = [];
         updateResults();
     }
 });
