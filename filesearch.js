@@ -118,7 +118,7 @@ const files = [
         location: "Aztec, New Mexico",
         description: "Necropsy performed on creature of unknown origin.",
         source: "Unknown",
-        image: "./assets/placeholder.png"
+        image: "./assets/CIA-RDP79-00752A000300120171-2.jpg"
     },
     {
         name: "CIA-RDP96-00788R001200030002-5",
