@@ -6,6 +6,7 @@ const files = [
         author: "Ralf Roletschek",
         year: "1966",
         location: "Plaza de las Tres Culturas, Mexico City",
+        locationTag: "Mexico City",
         description: "A monument erected in the Plaza de las Tres Culturas to honor those killed in the Tlatelolco Massacre. Only 20 names are engraved on its surface, despite the estimated death toll ranging somewhere between 300 and 400. The exact number of victims remains unknown. In the background, the Church of Santiago, and to the right, the Tlatelolco Archaeological Zone.",
         source: "Unknown",
         image: "./assets/tlatelolco.jpg"
@@ -17,6 +18,7 @@ const files = [
         author: "Gobierno de Mexico",
         year: "Unknown",
         location: "Unknown",
+        locationTag: "Unknown",
         description: "The insignia of the White Brigade, a paramilitary unit led by Miguel Nazar Haro (LITEMPO-12) which carried out covert acts of state terrorism against left-wing militias such as the Party of the Poor (PdlP), La Iglesia del Tercer Milenio (IDTM), and La Liga Comunista 23 de Septiembre (LC23S) on behalf of the Dirección Federal de Seguridad (DFS) and the Mexican government.",
         source: "Sitios de Memoria",
         image: "./assets/brigadablanca.jpg"
@@ -28,6 +30,7 @@ const files = [
         author: "Gobierno de Mexico",
         year: "Unknown",
         location: "Unknown",
+        locationTag: "Unknown",
         description: "A cloth patch belonging to an agent of the Dirección Federal de Seguridad (DFS). The perimeter text reads: “Do not fear where you go; you are meant to die where you must.”",
         source: "Sitios de Memoria",
         image: "./assets/placeholder.png"
@@ -39,6 +42,7 @@ const files = [
         author: "Gobierno de Mexico",
         year: "1966",
         location: "Unknown",
+        locationTag: "Unknown",
         description: "Identifications of alleged members of the Liga Comunista 23 de Septiembre (LC23S).",
         source: "Sitios de Memoria",
         image: "./assets/placeholder.png"
@@ -50,6 +54,7 @@ const files = [
         author: "Gobierno de Mexico",
         year: "1966",
         location: "Unknown",
+        locationTag: "Unknown",
         description: "Follow-up to a statement from Gabriel Millan Arellano. Halcones were employed by the DFS.",
         source: "Sitios de Memoria",
         image: "./assets/placeholder.png"
@@ -61,6 +66,7 @@ const files = [
         author: "Gobierno de Mexico",
         year: "1965",
         location: "Oaxaca de Juárez, Oaxaca, Mexico",
+        locationTag: "Oaxaca",
         description: "Kidnapping of a Medical Student from UABJO.",
         source: "Sitios de Memoria",
         image: "./assets/placeholder.png"
@@ -72,6 +78,7 @@ const files = [
         author: "Gobierno de Mexico",
         year: "1965",
         location: "Circular de Morelia No. 8, Colonia Roma, DF",
+        locationTag: "Mexico City",
         description: "A letter addressed to Miguel Nazar Haro, Deputy Director of the DFS regarding the activities of the Liga Comunista 23 de Septiembre (LC23S).",
         source: "Unknown",
         image: "./assets/placeholder.png"
@@ -83,6 +90,7 @@ const files = [
         author: "Unknown",
         year: "1966-06-10",
         location: "Mexico City, Mexico",
+        locationTag: "Mexico City",
         description: "Enrique Bordes Mangel photographing the approaching Halcones.",
         source: "General Directorate Fund for Political and Social Research, Box 1266B, exp. 4.",
         image: "./assets/1a.jpg"
@@ -94,6 +102,7 @@ const files = [
         author: "Jacobo Grinberg-Zylberbaum",
         year: "1965",
         location: "Sierra Madre del Sur, Guerrero",
+        locationTag: "Guerrero",
         description: "Found alongside encrypted text in the notes of J. Grinberg: “i) Brain activity exists outside the skull. ii) This extra-skull activity establishes a functional connection between different brains and unites them. iii) Space is a component in our brain's perceptual construction of reality. iv) A fundamental energetic matrix exists behind every material object and physical manifestation. v) The feeling of individuality can be transcended to gain access to perception of unity.”",
         source: "“Psychophysiological Correlates of Communication, Gravitation and Unity: The Syntergic Theory”",
         image: "./assets/placeholder.png"
@@ -105,6 +114,7 @@ const files = [
         author: "United States Federal Government",
         year: "1965-03-24",
         location: "Aztec, New Mexico",
+        locationTag: "New Mexico",
         description: "A detailed photograph of the “Aztec Doodlebug” sold by Silas Newton and Leonard GeBauer to Petróleos Mexicanos (Pemex) in 1965.",
         source: "Unknown",
         image: "./assets/CIA-RDP96-00792R000700130002-5.jpg"
@@ -116,6 +126,7 @@ const files = [
         author: "United States Federal Government",
         year: "1965-03-13",
         location: "Aztec, New Mexico",
+        locationTag: "New Mexico",
         description: "Necropsy performed on creature of unknown origin.",
         source: "Unknown",
         image: "./assets/placeholder.png"
@@ -127,6 +138,7 @@ const files = [
         author: "United States Federal Government",
         year: "1966-06-06",
         location: "White Sands Missile Range, New Mexico",
+        locationTag: "New Mexico",
         description: "Early psionic missile prototype constructed using traces of cobalt-60 found at an excavation site near Aztec, New Mexico.",
         source: "Unknown",
         image: "./assets/CIA-RDP96-00788R001200030002-5.jpg"
@@ -138,6 +150,7 @@ const files = [
         author: "David Mathias",
         year: "1965-09-13",
         location: "Denver, Colorado",
+        locationTag: "Colorado",
         description: "Author Frank Scully (right) and oil prospector Silas Newton (center) demonstrate ideas about magnetism and earth's orbit using Scully's book Behind the Flying Saucers (1950) to represent a flying saucer and a bowl held by KMYR radio salesman George Koehler (left) to represent the earth.",
         source: "The Denver Post",
         image: "./assets/little-men.png"
@@ -149,6 +162,7 @@ const files = [
         author: "United States Federal Government",
         year: "1965-04-24",
         location: "Washington, D.C.",
+        locationTag: "District of Columbia",
         description: "FBI case file opened on Silas M. Newton after his claims of owning a gadget that could detect minerals and oil were published in the Denver Post. Two months later, he was added to the FBI’s Most Wanted list on charges of espionage, treason, supporting the production of foreign psionic weapons, and aiding suspected narco-satanist organizations.",
         source: "Federal Bureau of Investigation",
         image: "./assets/placeholder.png"
@@ -160,6 +174,7 @@ const files = [
         author: "Charles Roos",
         year: "1965-10-17",
         location: "Denver, Colorado",
+        locationTag: "Colorado",
         description: "Headline of an article from the Denver Post reporting on the prosecution of Silas M. Newton and Leonard GeBauer for allegedly defrauding Herman A. Flader of $50,000 through his investment in GeBauer’s Colorado Geophysics & Development company, which failed to meet its projected earnings.",
         source: "The Denver Post",
         image: "./assets/doodlebug-flader-probed.jpg"
@@ -171,6 +186,7 @@ const files = [
         author: "J. P. Cahn",
         year: "1965-10-21",
         location: "New York City, New York",
+        locationTag: "New York",
         description: "Images of Silas M. Newton and Leo A. GeBauer published in an article covering their flight across the border to evade U.S. authorities.",
         source: "True, The Man's Magazine",
         image: "./assets/oil-tycoons-mexico.png"
@@ -182,6 +198,7 @@ const files = [
         author: "Berlyn Brixner",
         year: "1945-07-15",
         location: "Socorro, New Mexico",
+        locationTag: "New Mexico",
         description: "Photograph of “Jumbo” taken 35 miles southwest of Socorro, New Mexico (now part of White Sands Missile Range) during its transport from Ohio to the Trinity test site.",
         source: "Los Alamos National Laboratory",
         image: "./assets/jumbo.jpg"
@@ -193,6 +210,7 @@ const files = [
         author: "Cartography Division & OBI",
         year: "1966-09-03",
         location: "Washington, D.C.",
+        locationTag: "District of Columbia",
         description: "Annotated map of New Mexico highlighting geographical connections between reported anomalous phenomena and key military bases.",
         source: "U.S. Air Force, Project Blue Book",
         image: "./assets/ufos-nm.png"
@@ -204,6 +222,7 @@ const files = [
         author: "Guillermo Asunsolo",
         year: "1966",
         location: "Mapimí, Durango",
+        locationTag: "Durango",
         description: "Photograph of U.S. military railcars in a Juarez railyard, published in a Mexican newspaper with the following caption: “Seventeen units including tank cars, platforms, vans and Pullman cars, make up the train that transports personnel and equipment of the U.S. Aeronautical and Space Administration, which last night at 11:35 p.m., guarded by Mexican federal police agents, entered national territory. Heavy machinery, trucks, electric power generating plants, refrigeration units and sleeping cars with their respective Red Cross symbols. All vehicles and equipment are carefully covered with serial numbers and identification. All are apparently property of the neighboring country’s army. The final destination is the radiation zone near Ceballos, Durango.”",
         source: "El Heraldo",
         image: "./assets/operation-sandpatch.png"
@@ -215,6 +234,7 @@ const files = [
         author: "International News Photo",
         year: "1955-03-29",
         location: "White Sands Missile Range, New Mexico",
+        locationTag: "New Mexico",
         description: "Technical photographers recording the blast from an atomic bomb test at the White Sands Missile Range (WSMR).",
         source: "National Nuclear Security Administration",
         image: "./assets/operation-teapot.jpg"
@@ -257,6 +277,7 @@ for (const file of files) {
             file.description,
             file.year,
             file.location,
+            file.locationTag,
             file.source
         ].join(" ")
     );
@@ -426,7 +447,7 @@ function updateResults() {
 
             case "location":
                 fileList = fileList.filter(file =>
-                    file.location.toLowerCase().includes(filter.value)
+                    file.locationTag.toLowerCase().includes(filter.value)
                 );
                 break;
         }
@@ -571,11 +592,11 @@ for (const tag of allTags) {
 
 const allLocs = {};
 for (const file of files) {
-    if (file.location in allLocs) {
-        allLocs[file.location] = allLocs[file.location] + 1;
+    if (file.locationTag in allLocs) {
+        allLocs[file.locationTag] = allLocs[file.locationTag] + 1;
 
     } else {
-        allLocs[file.location] = 1;
+        allLocs[file.locationTag] = 1;
     }
 }
 
