@@ -98,14 +98,14 @@ const files = [
     {
         name: "Diagram of Transferred Potential (TP)",
         tags: ["syntergic theory", "lattices", "parapsychology"],
-        link: "./assets/diagram-tp.pdf",
+        link: "./assets/diagram-tp.jpg",
         author: "Jacobo Grinberg-Zylberbaum",
         year: "1965",
         location: "Sierra Madre del Sur, Guerrero",
         locationTag: "Guerrero",
         description: "Found alongside encrypted text in the notes of J. Grinberg: “i) Brain activity exists outside the skull. ii) This extra-skull activity establishes a functional connection between different brains and unites them. iii) Space is a component in our brain's perceptual construction of reality. iv) A fundamental energetic matrix exists behind every material object and physical manifestation. v) The feeling of individuality can be transcended to gain access to perception of unity.”",
         source: "“Psychophysiological Correlates of Communication, Gravitation and Unity: The Syntergic Theory”",
-        image: "./assets/placeholder.png"
+        image: "./assets/diagram-tp.jpg"
     },
     {
         name: "CIA-RDP96-00792R000700130002-5",
