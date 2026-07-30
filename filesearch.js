@@ -24,7 +24,7 @@ const files = [
     {
         name: "Dirección Federal de Seguridad (FDS) Fabric Patch",
         tags: ["white brigade", "dirty war", "olympics", "paramilitary", "death flight"],
-        link: "./fabricpatch.pdf",
+        link: "./assets/fabricpatch.pdf",
         author: "Gobierno de México",
         year: "Unknown",
         location: "Unknown",
@@ -35,7 +35,7 @@ const files = [
     {
         name: "21-438-71, L-1H-10",
         tags: ["dirty war", "olympics", "paramilitary", "disappearances", "LC23S"],
-        link: "./21-438-71.pdf",
+        link: "./assets/21-438-71.pdf",
         author: "Gobierno de México",
         year: "1966",
         location: "Unknown",
@@ -46,7 +46,7 @@ const files = [
     {
         name: "Ex 21-438-71 H-2 L-1",
         tags: ["dirty war", "olympics", "disappearances", "halcones", "DFS"],
-        link: "./ex-21-438-71.pdf",
+        link: "./assets/ex-21-438-71.pdf",
         author: "Gobierno de México",
         year: "1966",
         location: "Unknown",
@@ -57,7 +57,7 @@ const files = [
     {
         name: "Exp. 100-18-1-78 H-159 L-65",
         tags: ["dirty war", "olympics", "disappearances", "halcones", "DFS"],
-        link: "./exp-100-18-1-78.pdf",
+        link: "./assets/exp-100-18-1-78.pdf",
         author: "Gobierno de México",
         year: "1965",
         location: "Oaxaca de Juárez, Oaxaca, Mexico",
@@ -68,7 +68,7 @@ const files = [
     {
         name: "File of the Special Brigade of the Dirección Federal de Seguridad (DFS)",
         tags: ["dirty war", "olympics", "disappearances", "halcones", "DFS", "LC23S", "litempo", "white brigade"],
-        link: "./dfs.pdf",
+        link: "./assets/dfs.pdf",
         author: "Gobierno de México",
         year: "1965",
         location: "Circular de Morelia No. 8, Colonia Roma, DF",
@@ -90,7 +90,7 @@ const files = [
     {
         name: "Diagram of Transferred Potential (TP)",
         tags: ["syntergic theory", "lattices", "parapsychology"],
-        link: "./diagram-tp.pdf",
+        link: "./assets/diagram-tp.pdf",
         author: "Jacobo Grinberg-Zylberbaum",
         year: "1965",
         location: "Sierra Madre del Sur, Guerrero",
@@ -101,7 +101,7 @@ const files = [
     {
         name: "CIA-RDP96-00792R000700130002-5",
         tags: ["pemex", "aztec doodlebug", "psionic devices", "ufo", "cobalt-60"],
-        link: "./CIA-RDP96-00792R000700130002-5.jpg",
+        link: "./assets/CIA-RDP96-00792R000700130002-5.jpg",
         author: "United States Federal Government",
         year: "1965-03-24",
         location: "Aztec, New Mexico",
@@ -112,7 +112,7 @@ const files = [
     {
         name: "CIA-RDP79-00752A000300120171-2",
         tags: ["aztec doodlebug", "ufo", "cobalt-60"],
-        link: "./CIA-RDP79-00752A000300120171-2.pdf",
+        link: "./assets/CIA-RDP79-00752A000300120171-2.pdf",
         author: "United States Federal Government",
         year: "1965-03-13",
         location: "Aztec, New Mexico",
@@ -134,7 +134,7 @@ const files = [
     {
         name: "“Little Men Due Soon: Flying Saucer Landing Forecast”",
         tags: ["aztec doodlebug", "psionic devices"],
-        link: "./little-men.pdf",
+        link: "./assets/little-men.pdf",
         author: "David Mathias",
         year: "1965-09-13",
         location: "Denver, Colorado",
@@ -145,7 +145,7 @@ const files = [
     {
         name: "Silas M. Newton Case File",
         tags: ["aztec doodlebug", "psionic devices", "FBI"],
-        link: "./newton-case-file.pdf",
+        link: "./assets/newton-case-file.pdf",
         author: "United States Federal Government",
         year: "1965-04-24",
         location: "Washington, D.C.",
@@ -200,7 +200,7 @@ const files = [
     {
         name: "Operation Sand Patch",
         tags: ["silent zone", "radiation"],
-        links: "./operation-sandpatch.pdf",
+        links: "./assets/operation-sandpatch.pdf",
         author: "Guillermo Asunsolo",
         year: "1966",
         location: "Mapimí, Durango",
@@ -286,7 +286,7 @@ function renderFiles(fileArray) {
             `<img class="search-thumb" src='${file.image}'/>
             <div>
                 <div class="file-name">
-                    <a href='${file.link}'>${file.name}</a>
+                    <a href='${file.link}' target="_blank">${file.name}</a>
                 </div>
                 <div class="file-data">
                     <span class="file-author">${file.author}</span> | <span class="file-loc">${file.location}</span> | <span class="file-age">${file.year}</span>
