@@ -7,7 +7,7 @@ const files = [
         year: "1966",
         location: "Plaza de las Tres Culturas, Mexico City",
         description: "A monument erected in the Plaza de las Tres Culturas to honor those killed in the Tlatelolco Massacre. Only 20 names are engraved on its surface, despite the estimated death toll ranging somewhere between 300 and 400. The exact number of victims remains unknown. In the background, the Church of Santiago, and to the right, the Tlatelolco Archaeological Zone.",
-        source: "",
+        source: "Unknown",
         image: "./placeholder.png"
     },
     {
@@ -73,7 +73,7 @@ const files = [
         year: "1965",
         location: "Circular de Morelia No. 8, Colonia Roma, DF",
         description: "A letter addressed to Miguel Nazar Haro, Deputy Director of the DFS regarding the activities of the Liga Comunista 23 de Septiembre (LC23S).",
-        source: "",
+        source: "Unknown",
         image: "./placeholder.png"
     },
     {
@@ -227,6 +227,7 @@ const resultBox = document.getElementById("search-results");
 const resultCount = document.getElementById("result-count");
 const searchField = document.getElementById("searchfield");
 
+const sortButtons = document.querySelectorAll(".sort-type");
 const sortNameAsc = document.getElementById("sort-name-asc");
 const sortNameDesc = document.getElementById("sort-name-desc");
 const sortYearAsc = document.getElementById("sort-year-asc");
@@ -237,6 +238,41 @@ const locationDrop = document.getElementById("loc-filter");
 const selectedTags = document.getElementById("selected-tags");
 
 let activeFilters = [];
+
+let currentSort = "name-asc";
+
+function updateSortButtons() {
+    sortButtons.forEach(button => button.classList.remove("active"));
+
+    switch (currentSort) {
+        case "name-asc":
+            sortNameAsc.classList.add("active");
+            break;
+        case "name-desc":
+            sortNameDesc.classList.add("active");
+            break;
+        case "year-asc":
+            sortYearAsc.classList.add("active");
+            break;
+        case "year-desc":
+            sortYearDesc.classList.add("active");
+            break;
+        default:
+            break;
+    }
+}
+
+function updateTagButtons() {
+    for (const tag of allTags) {
+        tagButtons[tag].classList.remove("active");
+    }
+
+    for (const filter of activeFilters) {
+        if (filter.type === "tag") {
+            tagButtons[filter.value].classList.add("active");
+        }
+    }
+}
 
 function renderFiles(fileArray) {
     resultBox.replaceChildren();
@@ -263,6 +299,9 @@ function renderFiles(fileArray) {
                 <div class="file-desc">
                     ${file.description}
                 </div>
+                <div class="file-src">
+                    Source: <em>${file.source}</em>
+                </div>
             </div>`;
 
         // append to search results
@@ -270,7 +309,7 @@ function renderFiles(fileArray) {
             tag.addEventListener('mouseup', function () {
                 searchField.value = '';
                 activeFilters = [{ type: "tag", value: tag.innerHTML }];
-                filterFiles();
+                updateResults();
             })
         }
         // for (const loc of curFile.querySelectorAll('.file-loc')) {
@@ -289,20 +328,88 @@ function renderFiles(fileArray) {
     }
 }
 
-function searchFiles(fileArray, searchTerm) {
-    const searchTerms = searchTerm.trim().split(/\s+/);
-    curFiles = fileArray.filter(file => searchTerms.every(term =>
-        file.name.toLowerCase().includes(term.toLowerCase()) ||
-        file.tags.join(',').toLowerCase().includes(term.toLowerCase()) ||
-        file.author.toLowerCase().includes(term.toLowerCase()) ||
-        file.description.toLowerCase().includes(term.toLowerCase()) ||
-        file.year.includes(term) ||
-        file.location.toLowerCase().includes(term.toLowerCase())
-    ));
-    locationDrop.selectedIndex = 0;
-    activeFilters = [];
+// function searchFiles(fileArray, searchTerm) {
+//     const searchTerms = searchTerm.trim().split(/\s+/);
+//     curFiles = fileArray.filter(file => searchTerms.every(term =>
+//         file.name.toLowerCase().includes(term.toLowerCase()) ||
+//         file.tags.join(',').toLowerCase().includes(term.toLowerCase()) ||
+//         file.author.toLowerCase().includes(term.toLowerCase()) ||
+//         file.description.toLowerCase().includes(term.toLowerCase()) ||
+//         file.year.includes(term) ||
+//         file.location.toLowerCase().includes(term.toLowerCase()) ||
+//         file.source.toLowerCase().includes(term.toLowerCase())
+//     ));
+//     locationDrop.selectedIndex = 0;
+//     activeFilters = [];
+//     renderSelectedFilters();
+//     return curFiles;
+// }
+
+// function filterFiles() {
+//     let fileList = files;
+
+//     for (const filter of activeFilters) {
+//         switch (filter.type) {
+//             case "tag":
+//                 fileList = fileList.filter(file => file.tags.includes(filter.value));
+//                 break;
+//             case "location":
+//                 fileList = fileList.filter(file => file.location.toLowerCase().includes(filter.value));
+//                 break;
+//             default:
+//                 break;
+//         }
+//     }
+
+//     curFiles = fileList;
+//     renderFiles(curFiles);
+//     renderSelectedFilters();
+// }
+
+function updateResults() {
+    let fileList = files;
+
+    // Search
+    const searchTerm = searchField.value.trim();
+
+    if (searchTerm !== "") {
+        const searchTerms = searchTerm.split(/\s+/);
+
+        fileList = fileList.filter(file =>
+            searchTerms.every(term =>
+                file.name.toLowerCase().includes(term.toLowerCase()) ||
+                file.tags.join(",").toLowerCase().includes(term.toLowerCase()) ||
+                file.author.toLowerCase().includes(term.toLowerCase()) ||
+                file.description.toLowerCase().includes(term.toLowerCase()) ||
+                file.year.includes(term) ||
+                file.location.toLowerCase().includes(term.toLowerCase()) ||
+                file.source.toLowerCase().includes(term.toLowerCase())
+            )
+        );
+    }
+
+    // Filters
+    for (const filter of activeFilters) {
+        switch (filter.type) {
+            case "tag":
+                fileList = fileList.filter(file =>
+                    file.tags.includes(filter.value)
+                );
+                break;
+
+            case "location":
+                fileList = fileList.filter(file =>
+                    file.location.toLowerCase().includes(filter.value)
+                );
+                break;
+        }
+    }
+
+    curFiles = fileList;
+
+    renderFiles(curFiles);
     renderSelectedFilters();
-    return curFiles;
+    updateTagButtons();
 }
 
 function sortFiles(fileArray, type, desc) {
@@ -348,8 +455,7 @@ function renderSelectedFilters() {
                 curTag.innerHTML = filter.value;
                 curTag.addEventListener('mouseup', () => {
                     activeFilters = activeFilters.filter(f => f.type !== "tag" || f.value !== filter.value);
-                    renderSelectedFilters();
-                    filterFiles();
+                    updateResults();
                 });
                 selectedTags.appendChild(curTag);
                 break;
@@ -370,49 +476,35 @@ function renderSelectedFilters() {
     }
 }
 
-function filterFiles() {
-    let fileList = files;
-
-    for (const filter of activeFilters) {
-        switch (filter.type) {
-            case "tag":
-                fileList = fileList.filter(file => file.tags.includes(filter.value));
-                break;
-            case "location":
-                fileList = fileList.filter(file => file.location.toLowerCase().includes(filter.value));
-                break;
-            default:
-                break;
-        }
-    }
-
-    curFiles = fileList;
-    renderFiles(curFiles);
-    renderSelectedFilters();
-}
-
 searchField.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
-        searchFiles(files, searchField.value);
-        renderFiles(curFiles);
+        // searchFiles(files, searchField.value);
+        // renderFiles(curFiles);
+        updateResults();
     }
 });
 
 sortNameAsc.addEventListener('click', function () {
+    currentSort = "name-asc";
+    updateSortButtons();
     sortFiles(curFiles, "name", false);
 })
 sortNameDesc.addEventListener('click', function () {
+    currentSort = "name-desc";
+    updateSortButtons();
     sortFiles(curFiles, "name", true);
 })
 sortYearAsc.addEventListener('click', function () {
+    currentSort = "year-asc";
+    updateSortButtons();
     sortFiles(curFiles, "year", false);
 })
 sortYearDesc.addEventListener('click', function () {
+    currentSort = "year-desc";
+    updateSortButtons();
     sortFiles(curFiles, "year", true);
 })
-
-sortFiles(files, "name", false);
 
 const tagFilters = document.getElementById("tag-filters");
 
@@ -425,17 +517,28 @@ for (const file of files) {
     }
 }
 
+const tagButtons = {};
+
 for (const tag of allTags) {
     const curTag = document.createElement('div');
     curTag.className = "file-tag";
     curTag.innerHTML = tag;
     curTag.addEventListener('mouseup', function () {
-        if (!activeFilters.some(f => f.type === "tag" && f.value === tag)) {
-            activeFilters.push({ type: "tag", value: tag });
+        const index = activeFilters.findIndex(
+            f => f.type === "tag" && f.value === tag
+        );
+        if (index === -1) {
+            activeFilters.push({
+                type: "tag",
+                value: tag
+            });
+        } else {
+            activeFilters.splice(index, 1);
         }
-        filterFiles();
+        updateResults();
     })
     tagFilters.appendChild(curTag);
+    tagButtons[tag] = curTag;
 }
 
 const allLocs = {};
@@ -463,5 +566,8 @@ locationDrop.addEventListener('change', (event) => {
     if (!activeFilters.some(f => f.type === "location" && f.value === selectedValue)) {
         activeFilters.push({ type: "location", value: selectedValue });
     }
-    filterFiles();
+    updateResults();
 });
+
+updateResults();
+sortFiles(files, "name", false);

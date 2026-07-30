@@ -89,6 +89,11 @@ main {
     text-decoration: underline;
 }
 
+.sort-type.active {
+    color: gold;
+    font-weight: bold;
+}
+
 #tag-filters {
     display: flex;
     flex-wrap: wrap;
@@ -149,6 +154,18 @@ main {
     border-radius: 2px;
     margin-right: 7px;
     cursor: pointer;
+}
+
+.file-tag:hover {
+    text-decoration: underline;
+}
+
+.file-tag.active {
+    font-weight: bold;
+}
+
+.file-src {
+    margin-top: 10px;
 }
 
 /* .file-loc {
