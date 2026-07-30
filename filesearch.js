@@ -189,13 +189,13 @@ const files = [
     {
         name: "Map of Reported UFO Incidents, New Mexico, 1964-1966",
         tags: ["ufo", "aztec doodlebug", "lonnie zamora", "hobbs burn", "silent zone"],
-        link: "./assets/ufos-nm.pdf",
+        link: "./assets/ufos-nm.png",
         author: "Cartography Division & OBI",
         year: "1966-09-03",
         location: "Washington, D.C.",
         description: "Annotated map of New Mexico highlighting geographical connections between reported anomalous phenomena and key military bases.",
         source: "U.S. Air Force, Project Blue Book",
-        image: "./assets/ufos-nm.pdf"
+        image: "./assets/ufos-nm.png"
     },
     {
         name: "Operation Sand Patch",
