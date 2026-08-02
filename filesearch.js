@@ -164,7 +164,7 @@ const files = [
         location: "Washington, D.C.",
         locationTag: "District of Columbia",
         description: "FBI case file opened on Silas M. Newton after his claims of owning a gadget that could detect minerals and oil were published in the Denver Post. Two months later, he was added to the FBI’s Most Wanted list on charges of espionage, treason, supporting the production of foreign psionic weapons, and aiding suspected narco-satanist organizations.",
-        source: "Federal Bureau of Investigation",
+        source: "Federal Bureau of Investigation (FBI)",
         image: "./assets/placeholder.png"
     },
     {
@@ -238,6 +238,30 @@ const files = [
         description: "Technical photographers recording the blast from an atomic bomb test at the White Sands Missile Range (WSMR).",
         source: "National Nuclear Security Administration",
         image: "./assets/operation-teapot.jpg"
+    },
+    {
+        name: "PROJECT(Classified) NO. 12 18-22 MARCH 1966",
+        tags: ["tecolutla monster", "ixtoc i", "radiation", "chicxulub crater", "cobalt-60"],
+        link: "./assets/no.12-8-2-MARCH_1966.png",
+        author: "Chief, Special Projects Division",
+        year: "1966-03-26",
+        location: "Veracruz, Mexico",
+        locationTag: "Veracruz",
+        description: "Internal CIA memorandum regarding the dissection and tissue analysis of a foreign lifeform discovered in Veracruz, Mexico on March 14, 1966. Despite publicly discrediting the specimen as merely the partially-decomposed remains of a sei whale, internal documents and declassified memos identify the entity as ”an anomalous organism of unknown origins.”",
+        source: "Central Intelligence Agency (CIA)",
+        image: "./assets/no.12-8-2-MARCH_1966.png"
+    },
+    {
+        name: "19.408333°N 92.325°W",
+        tags: ["tecolutla monster", "ixtoc i", "radiation"],
+        link: "./assets/19.408333°N 92.325°W.png",
+        author: "Unknown",
+        year: "1966-07-02",
+        location: "Bay of Campeche, Gulf of Mexico",
+        locationTag: "Campeche",
+        description: "Photograph of an unidentified carcass recovered by PEMEX personnel aboard the Ixotc I drilling platform off the coast of Campeche.",
+        source: "Petróleos Mexicanos (PEMEX)",
+        image: "./assets/19.408333°N 92.325°W.png"
     },
 ];
 
